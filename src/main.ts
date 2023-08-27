@@ -6,7 +6,9 @@ import { AppModule } from './app.module';
 import { ExpressAdapter } from '@nestjs/platform-express'; // Importe o ExpressAdapter
 
 async function bootstrap() {
-  const appOptions: NestApplicationOptions = {}; // Crie um objeto de opções
+  const appOptions: NestApplicationOptions = {
+    cors: true,
+  };
   const app = await NestFactory.create(
     AppModule,
     new ExpressAdapter(),
@@ -15,15 +17,15 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
 
-  app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader(
-      'Access-Control-Allow-Methods',
-      'GET,HEAD,PUT,PATCH,POST,DELETE',
-    );
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization');
-    next();
-  });
+  // app.use((req, res, next) => {
+  //   res.setHeader('Access-Control-Allow-Origin', '*');
+  //   res.setHeader(
+  //     'Access-Control-Allow-Methods',
+  //     'GET,HEAD,PUT,PATCH,POST,DELETE',
+  //   );
+  //   res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization');
+  //   next();
+  // });
 
   const config = new DocumentBuilder()
     .setTitle('Traffic control API Centro Imagem')
