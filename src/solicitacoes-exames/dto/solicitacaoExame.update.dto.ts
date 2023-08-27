@@ -27,5 +27,9 @@ export class SolicitacaoExameUpdateDTO extends PartialType(
 
   @ApiProperty()
   @Allow()
+  observacao?: string;
+
+  @ApiProperty()
+  @Allow()
   logInterno?: string;
 }

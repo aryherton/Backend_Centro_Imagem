@@ -24,5 +24,9 @@ export class SolicitacaoExameCreatedDTO {
 
   @ApiProperty()
   @Allow()
+  observacao: string;
+
+  @ApiProperty()
+  @Allow()
   logInterno: string;
 }

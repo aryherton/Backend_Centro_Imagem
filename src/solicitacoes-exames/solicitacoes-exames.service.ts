@@ -48,4 +48,13 @@ export class SolicitacoesExamesService {
   async delete(id: string) {
     return await this.solicitacaoExameModel.findByIdAndDelete(id).exec();
   }
+
+  async put(
+    id: string,
+    solicitacaoExameCreatedDTO: SolicitacaoExameCreatedDTO,
+  ) {
+    return await this.solicitacaoExameModel
+      .findByIdAndUpdate(id, solicitacaoExameCreatedDTO)
+      .exec();
+  }
 }

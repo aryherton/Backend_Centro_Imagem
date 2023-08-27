@@ -19,6 +19,9 @@ export class SolicitacaoExameClass extends Document {
   aprovado: boolean;
 
   @Prop()
+  observacao: string;
+
+  @Prop()
   logInterno: string;
 }
 
