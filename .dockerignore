@@ -1,0 +1,8 @@
+# Arquivos e diretórios específicos para ignorar
+node_modules
+npm-debug.log
+.env
+
+# Exclui todos os arquivos ocultos e temporários
+.*
+*~
